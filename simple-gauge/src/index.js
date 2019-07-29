@@ -21,9 +21,14 @@ const drawViz = (data) => {
    let val = +data.tables.DEFAULT[0].metric;
    const min = +data.style.arcMin.value ? +data.style.arcMin.value : +data.style.arcMin.defaultValue
    const max = +data.style.arcMax.value ? +data.style.arcMax.value : +data.style.arcMax.defaultValue;
-   const secondLevel = +data.style.secondLevel.value ? +data.style.secondLevel.value : +data.style.secondLevel.defaultValue;
-   const thirdLevel = +data.style.thirdLevel.value ? +data.style.thirdLevel.value : +data.style.thirdLevel.defaultValue;
+   const secondLevel = +data.style.secondLevelThresh.value ? +data.style.secondLevelThresh.value : +data.style.secondLevelThresh.defaultValue;
+   const thirdLevel = +data.style.thirdLevelThresh.value ? +data.style.thirdLevelThresh.value : +data.style.thirdLevelThresh.defaultValue;
    const fullArcDegrees = +data.style.arcLength.value ? +data.style.arcLength.value : +data.style.arcLength.defaultValue;
+   const firstLevelFill = data.style.firstLevelFill.value.color ? data.style.firstLevelFill.value.color : data.style.firstLevelFill.defaultValue;
+   const secondLevelFill = data.style.secondLevelFill.value.color ? data.style.secondLevelFill.value.color : data.style.secondLevelFill.defaultValue;
+   const thirdLevelFill = data.style.thirdLevelFill.value.color ? data.style.thirdLevelFill.value.color : data.style.thirdLevelFill.defaultValue;
+   const needleFill = data.style.needleFill.value.color ? data.style.needleFill.value.color : data.style.needleFill.defaultValue;
+
    var outerRad = (Math.min(width, height) - 20)/2
    var innerRad = outerRad*3/4;
    const smallCircleRad = innerRad*1/10;
@@ -34,9 +39,9 @@ const drawViz = (data) => {
    let arcScale = d3.scaleLinear().domain([min, max]).range([-arcRands, arcRands]);
 
    let arcData = [
-     {"class": "lower", "startAngle": min, "endAngle": secondLevel, "color": "red"},
-     {"class": "middle", "startAngle": secondLevel, "endAngle": thirdLevel, "color": "yellow"},
-     {"class": "upper", "startAngle": thirdLevel, "endAngle": max, "color": "green"}
+     {"class": "lower", "startAngle": min, "endAngle": secondLevel, "color": firstLevelFill},
+     {"class": "middle", "startAngle": secondLevel, "endAngle": thirdLevel, "color": secondLevelFill},
+     {"class": "upper", "startAngle": thirdLevel, "endAngle": max, "color": thirdLevelFill}
    ]
 
    var arc = d3.arc()
@@ -55,17 +60,15 @@ const drawViz = (data) => {
      .attr("d", arc).attr("fill", function(d){return d.color;}).attr("stroke", "white");
 
 
-
-
    svg.append("circle")
-   .attr("r", smallCircleRad).attr("fill", "black").attr("cx", 0).attr("cy", 0);
+   .attr("r", smallCircleRad).attr("fill", needleFill).attr("cx", 0).attr("cy", 0);
 
 
    svg
      .append("rect")
      .attr("width", smallCircleRad*rectWidthRatio)
      .attr("height", (innerRad - 10))
-     .attr("fill","black")
+     .attr("fill",needleFill)
      .attr("transform", "translate(" + -(smallCircleRad*rectWidthRatio)/2 + " 0)" +
            "rotate(" + (180 +  180*valRads/Math.PI) + " " +  (smallCircleRad*rectWidthRatio)/2 + " 0)" );
 }

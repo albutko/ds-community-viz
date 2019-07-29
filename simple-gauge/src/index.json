@@ -16,42 +16,90 @@
       ]
     }
   ],
-"style": [
-  {
-    "id": "arcStyles",
-    "label": "Arc Stylings",
-    "elements": [
-      {
-      "type": "INTERVAL",
-      "id": "arcLength",
-      "label": "Full Arc Length (degrees)",
-      "defaultValue": "180"
-      },
-      {
-      "type": "TEXTINPUT",
-      "id": "arcMin",
-      "label": "Minimum Value",
-      "defaultValue": "0"
-      },
-      {
-      "type": "TEXTINPUT",
-      "id": "arcMax",
-      "label": "Maximum Value",
-      "defaultValue": "99"
-     },
-     {
-     "type": "TEXTINPUT",
-     "id": "secondLevel",
-     "label": "Second Level Threshold",
-     "defaultValue": "33"
-      },
-      {
-      "type": "TEXTINPUT",
+  "style": [
+    {
+      "id": "arc",
+      "label": "Arc",
+      "elements": [
+        {
+          "type": "INTERVAL",
+          "id": "arcLength",
+          "label": "Full Arc Length (degrees)",
+          "defaultValue": "180"
+        },
+        {
+          "type": "INTERVAL",
+          "id": "arcMin",
+          "label": "Minimum Value",
+          "defaultValue": "0"
+        },
+        {
+          "type": "INTERVAL",
+          "id": "arcMax",
+          "label": "Maximum Value",
+          "defaultValue": "99"
+        }
+      ]
+    },
+    {
+      "id": "firstLevel",
+      "label": "First Level",
+      "elements": [
+        {
+          "type": "FILL_COLOR",
+          "id": "firstLevelFill",
+          "label": "First Level Fill Color",
+          "defaultValue": "#32CD32"
+        }
+      ]
+    },
+    {
+      "id": "secondLevel",
+      "label": "Second Level",
+      "elements": [
+        {
+          "type": "INTERVAL",
+          "id": "secondLevelThresh",
+          "label": "Second Level Threshold",
+          "defaultValue": "33"
+        },
+        {
+          "type": "FILL_COLOR",
+          "id": "secondLevelFill",
+          "label": "Second Level Fill Color",
+          "defaultValue": "#FFFF00"
+        }
+      ]
+    },
+    {
       "id": "thirdLevel",
-      "label": "Third Level Threshold",
-      "defaultValue": "66"
-      }
-    ]
-  }
+      "label": "Third Level",
+      "elements": [
+        {
+          "type": "INTERVAL",
+          "id": "thirdLevelThresh",
+          "label": "Third Level Threshold",
+          "defaultValue": "66"
+        },
+        {
+          "type": "FILL_COLOR",
+          "id": "thirdLevelFill",
+          "label": "Third Level Fill Color",
+          "defaultValue": "#FF0000"
+        }
+      ]
+    },
+    {
+      "id": "needleStyle",
+      "label": "Needle",
+      "elements": [
+        {
+          "type": "FILL_COLOR",
+          "id": "needleFill",
+          "label": "Needle Color",
+          "defaultValue": "black"
+        }
+      ]
+    }
   ]
 }
