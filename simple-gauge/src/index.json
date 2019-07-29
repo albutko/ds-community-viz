@@ -97,7 +97,7 @@
           "type": "FILL_COLOR",
           "id": "needleFill",
           "label": "Needle Color",
-          "defaultValue": "black"
+          "defaultValue": "#000000"
         }
       ]
     }
