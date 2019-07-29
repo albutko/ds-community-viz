@@ -1,0 +1,57 @@
+{
+  "data": [
+    {
+      "id": "gauge",
+      "label": "Gauge Value",
+      "elements": [
+        {
+          "id": "dim",
+          "label": "Gauge Value",
+          "type": "METRIC",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        }
+      ]
+    }
+  ],
+"style": [
+  {
+    "id": "arcStyles",
+    "label": "Arc Stylings",
+    "elements": [
+      {
+      "type": "INTERVAL",
+      "id": "arcLength",
+      "label": "Full Arc Length (degrees)",
+      "defaultValue": "180"
+      },
+      {
+      "type": "TEXTINPUT",
+      "id": "arcMin",
+      "label": "Minimum Value",
+      "defaultValue": "0"
+      },
+      {
+      "type": "TEXTINPUT",
+      "id": "arcMax",
+      "label": "Maximum Value",
+      "defaultValue": "99"
+     },
+     {
+     "type": "TEXTINPUT",
+     "id": "secondLevel",
+     "label": "Second Level Threshold",
+     "defaultValue": "33"
+      },
+      {
+      "type": "TEXTINPUT",
+      "id": "thirdLevel",
+      "label": "Third Level Threshold",
+      "defaultValue": "66"
+      }
+    ]
+  }
+  ]
+}
