@@ -5,7 +5,7 @@
       "label": "Gauge Value",
       "elements": [
         {
-          "id": "dim",
+          "id": "metric",
           "label": "Gauge Value",
           "type": "METRIC",
           "options": {

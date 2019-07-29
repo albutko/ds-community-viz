@@ -46,8 +46,8 @@ const drawViz = (data) => {
        .endAngle(function(d){return arcScale(d.endAngle);})
        .cornerRadius(2);
 
-   var valRads = arcScale(Math.max(Math.min(val,max)));
-
+   // var valRads = arcScale(Math.max(Math.min(val,max),min));
+   var valRads = arcScale(val);
    svg.append("g").selectAll("path")
      .data(arcData)
      .enter()
