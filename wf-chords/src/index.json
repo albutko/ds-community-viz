@@ -33,5 +33,84 @@
         }
       ]
     }
-  ]
+  ],
+  "style": [
+    {
+      "id" : "general",
+      "label": "General Stylings",
+      "elements" : [
+          {
+            "id" : "fontSize",
+            "label" : "Font Size",
+            "type" : "FONT_SIZE",
+            "defaultValue": "10"
+          },
+          {
+            "id" : "fontFamily",
+            "label" : "Font Family",
+            "type" : "FONT_FAMILY",
+            "defaultValue" : "auto"
+          },
+          {
+            "id" : "fontColor",
+            "label" : "Font Color",
+            "type" : "FONT_COLOR"
+          }
+        ]
+     },
+     {
+      "id" : "arcs",
+      "label": "Arcs",
+      "elements" : [
+          {
+            "id" : "outerRadiusPerc",
+            "label" : "Outer Radius Size",
+            "type" : "INTERVAL",
+            "defaultValue" : "4"
+          },
+          {
+            "id" : "radialDiff",
+            "label" : "Inner/Outer Radius difference (pxs)",
+            "type" : "INTERVAL",
+            "defaultValue" : "120"
+          },
+          {
+            "id" : "arcFocusedOpacity",
+            "label" : "Focused Opacity",
+            "type" : "OPACITY",
+            "defaultValue" : "1.0"
+          },
+          {
+            "id" : "arcUnfocusedOpacity",
+            "label" : "Unfocused Opacity",
+            "type" : "OPACITY",
+            "defaultValue" : "0.1"
+          },
+          {
+            "id" : "arcPadding",
+            "label" : "Arc Padding",
+            "type" : "INTERVAL",
+            "defaultValue" : "4"
+          }
+       ]
+     },
+     {
+      "id" : "ribbons",
+      "label": "Ribbons",
+      "elements" : [
+          {
+           "id" : "ribbonFocusedOpacity",
+           "label" : "Focused Opacity",
+           "type" : "OPACITY",
+           "defaultValue" : "0.6"
+          },
+          {
+           "id" : "ribbonUnfocusedOpacity",
+           "label" : "Unfocused Opacity",
+           "type" : "OPACITY",
+           "defaultValue" : "0.1"
+          }
+        ]
+      }
+   ]
 }
