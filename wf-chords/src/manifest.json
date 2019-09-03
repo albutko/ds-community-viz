@@ -1,0 +1,23 @@
+{
+  "name": "My Visualizations",
+  "organization": "MyOrg",
+  "description": "My first visualization package.",
+  "logoUrl": "https://logo",
+  "organizationUrl": "https://url",
+  "supportUrl": "https://url",
+  "privacyPolicyUrl": "https://url",
+  "termsOfServiceUrl": "https://url",
+  "packageUrl": "https://url",
+  "devMode": "DEVMODE_BOOL",
+  "components": [
+    {
+      "name": "myViz",
+      "description": "My first Community Visualization",
+      "iconUrl": "https://url",
+      "resource": {
+        "js": "gs://ao-viz/wf-chords/dev/index.js",
+        "config": "gs://ao-viz/wf-chords/dev/index.json"
+      }
+    }
+  ]
+}
